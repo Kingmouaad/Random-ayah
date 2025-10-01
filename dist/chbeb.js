@@ -100,6 +100,7 @@ async function handleGenerateClick() {
         tfsir3.addEventListener("click", () => {
             tfsir.textContent = tafsir[2].text;
         });
+        number.textContent = `Al-quran | surah number :${quran.chapter} | Ayah :${quran.verse}`;
         console.log(quran);
         console.log(tafsir);
         console.log(en);
@@ -115,4 +116,6 @@ async function handleGenerateClick() {
 if (generate) {
     generate.addEventListener("click", handleGenerateClick);
 }
+const click = new Event("click");
+generate?.dispatchEvent(click);
 //# sourceMappingURL=chbeb.js.map

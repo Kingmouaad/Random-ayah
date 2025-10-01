@@ -136,6 +136,9 @@ body {
   direction: rtl;
 }
 #number {
+  color: black;
+  font-weight: bold;
+  font-size: 30px;
 }
 
 .quran-btn {
@@ -186,5 +189,256 @@ body {
   }
   100% {
     transform: rotate(360deg);
+  }
+}
+/* Mobile First Media Queries */
+
+/* Small Mobile Devices (320px - 480px) */
+@media (max-width: 480px) {
+  .head {
+    flex-direction: column;
+    gap: 20px;
+    padding: 10px;
+  }
+  .bigtext {
+    align-self: center;
+  }
+
+  #lang,
+  #Generate {
+    min-width: 150px;
+    min-height: 45px;
+    font-size: 18px;
+  }
+
+  .bigtext {
+    font-size: 28px;
+  }
+
+  .content {
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  #backward,
+  #forward {
+    display: none;
+  }
+
+  #backward div,
+  #forward div {
+    font-size: 28px;
+    min-height: 60px;
+  }
+
+  #chest {
+    order: 1;
+    padding: 10px;
+  }
+
+  #AYAH,
+  #ayahtranslate {
+    font-size: 20px;
+    min-height: 60px;
+  }
+
+  #tfsir {
+    font-size: 18px;
+    flex-direction: column;
+    gap: 5px;
+  }
+
+  #number {
+    font-size: 24px;
+  }
+}
+
+/* Mobile Devices (481px - 768px) */
+@media (min-width: 481px) and (max-width: 768px) {
+  .head {
+    flex-direction: row;
+    gap: 15px;
+  }
+
+  #lang,
+  #Generate {
+    min-width: 160px;
+    min-height: 48px;
+    font-size: 20px;
+  }
+
+  .bigtext {
+    font-size: 30px;
+  }
+
+  .content {
+    flex-direction: row;
+    gap: 15px;
+  }
+
+  #backward,
+  #forward {
+    display: none;
+  }
+
+  #backward div,
+  #forward div {
+    font-size: 32px;
+    min-height: 75px;
+  }
+
+  #AYAH,
+  #ayahtranslate {
+    font-size: 22px;
+    min-height: 75px;
+  }
+
+  #tfsir {
+    font-size: 20px;
+  }
+
+  #number {
+    font-size: 26px;
+  }
+}
+
+/* Tablets (769px - 1024px) */
+@media (min-width: 769px) and (max-width: 1024px) {
+  .head {
+    flex-direction: row;
+    gap: 20px;
+  }
+
+  #lang,
+  #Generate {
+    min-width: 170px;
+    min-height: 50px;
+    font-size: 21px;
+  }
+
+  .bigtext {
+    font-size: 32px;
+  }
+
+  #backward div,
+  #forward div {
+    font-size: 34px;
+    min-height: 80px;
+  }
+
+  #AYAH,
+  #ayahtranslate {
+    font-size: 24px;
+    min-height: 80px;
+  }
+
+  #tfsir {
+    font-size: 22px;
+  }
+
+  #number {
+    font-size: 28px;
+  }
+}
+
+/* Desktop and Large Screens (1025px and above) */
+@media (min-width: 1025px) {
+  .head {
+    flex-direction: row;
+    gap: 25px;
+  }
+
+  #lang,
+  #Generate {
+    min-width: 180px;
+    min-height: 50px;
+    font-size: 22px;
+  }
+
+  .bigtext {
+    font-size: 35px;
+  }
+
+  #backward,
+  #forward {
+    width: 15%;
+  }
+
+  #backward div,
+  #forward div {
+    font-size: 35px;
+    min-height: 85px;
+  }
+
+  #AYAH,
+  #ayahtranslate {
+    font-size: 26px;
+    min-height: 85px;
+  }
+
+  #tfsir {
+    font-size: 24px;
+  }
+
+  #number {
+    font-size: 30px;
+  }
+}
+
+/* Landscape Orientation for Mobile */
+@media (max-width: 768px) and (orientation: landscape) {
+  .head {
+    flex-direction: row;
+    min-height: 60px;
+    gap: 15px;
+  }
+
+  #lang,
+  #Generate {
+    min-width: 140px;
+    min-height: 40px;
+    font-size: 18px;
+  }
+
+  .bigtext {
+    font-size: 24px;
+  }
+
+  .content {
+    flex-direction: row;
+    gap: 15px;
+  }
+
+  #backward,
+  #forward {
+    width: 20%;
+  }
+
+  #backward div,
+  #forward div {
+    font-size: 28px;
+    min-height: 60px;
+  }
+
+  #AYAH,
+  #ayahtranslate {
+    font-size: 20px;
+    min-height: 60px;
+  }
+
+  #tfsir {
+    font-size: 18px;
+  }
+
+  #number {
+    font-size: 22px;
+  }
+}
+
+/* High DPI Displays */
+@media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
+  body {
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
   }
 }
