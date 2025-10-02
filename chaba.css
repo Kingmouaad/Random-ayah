@@ -140,6 +140,10 @@ body {
   font-weight: bold;
   font-size: 30px;
 }
+#tfsirplace {
+  direction: rtl;
+  font-size: 25px;
+}
 
 .quran-btn {
   padding: 14px 32px;
@@ -293,7 +297,8 @@ body {
     min-height: 75px;
   }
 
-  #tfsir {
+  #tfsir,
+  #tfsirplace {
     font-size: 20px;
   }
 
@@ -332,7 +337,8 @@ body {
     min-height: 80px;
   }
 
-  #tfsir {
+  #tfsir,
+  #tfsirplace {
     font-size: 22px;
   }
 
@@ -376,7 +382,8 @@ body {
     min-height: 85px;
   }
 
-  #tfsir {
+  #tfsir,
+  #tfsirplace {
     font-size: 24px;
   }
 
@@ -426,7 +433,8 @@ body {
     min-height: 60px;
   }
 
-  #tfsir {
+  #tfsir,
+  #tfsirplace {
     font-size: 18px;
   }
 

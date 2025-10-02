@@ -53,6 +53,7 @@ const translate = document.querySelector(
 const tfsir = document.querySelector("#tfsir") as HTMLElement | null;
 const number = document.querySelector("#number") as HTMLElement | null;
 const select = document.querySelector("#lang") as HTMLSelectElement | null;
+const tfsirplace = document.querySelector("#tfsirplace") as HTMLElement | null;
 const generate = document.querySelector(
   "#Generate"
 ) as HTMLButtonElement | null;
@@ -109,19 +110,23 @@ async function handleGenerateClick() {
         tfsir?.removeChild(childd);
       });
       tfsir.textContent = "";
+      tfsirplace!.textContent = "";
     }
 
     tfsir?.appendChild(tfsir1!);
     tfsir?.appendChild(tfsir2!);
     tfsir?.appendChild(tfsir3!);
     tfsir1!.addEventListener("click", () => {
-      tfsir!.textContent = tafsir[0].text;
+      tfsirplace!.textContent = "";
+      tfsirplace!.textContent = tafsir[0].text;
     });
     tfsir2!.addEventListener("click", () => {
-      tfsir!.textContent = tafsir[1].text;
+      tfsirplace!.textContent = "";
+      tfsirplace!.textContent = tafsir[1].text;
     });
     tfsir3!.addEventListener("click", () => {
-      tfsir!.textContent = tafsir[2].text;
+      tfsirplace!.textContent = "";
+      tfsirplace!.textContent = tafsir[2].text;
     });
     number!.textContent = `Al-quran | surah number :${quran.chapter} | Ayah :${quran.verse}`;
     console.log(quran);

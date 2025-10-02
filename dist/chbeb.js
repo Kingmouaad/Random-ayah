@@ -31,6 +31,7 @@ const translate = document.querySelector("#ayahtranslate");
 const tfsir = document.querySelector("#tfsir");
 const number = document.querySelector("#number");
 const select = document.querySelector("#lang");
+const tfsirplace = document.querySelector("#tfsirplace");
 const generate = document.querySelector("#Generate");
 const content = document.querySelector("#chest");
 document.addEventListener("DOMContentLoaded", () => { });
@@ -87,18 +88,22 @@ async function handleGenerateClick() {
                 tfsir?.removeChild(childd);
             });
             tfsir.textContent = "";
+            tfsirplace.textContent = "";
         }
         tfsir?.appendChild(tfsir1);
         tfsir?.appendChild(tfsir2);
         tfsir?.appendChild(tfsir3);
         tfsir1.addEventListener("click", () => {
-            tfsir.textContent = tafsir[0].text;
+            tfsirplace.textContent = "";
+            tfsirplace.textContent = tafsir[0].text;
         });
         tfsir2.addEventListener("click", () => {
-            tfsir.textContent = tafsir[1].text;
+            tfsirplace.textContent = "";
+            tfsirplace.textContent = tafsir[1].text;
         });
         tfsir3.addEventListener("click", () => {
-            tfsir.textContent = tafsir[2].text;
+            tfsirplace.textContent = "";
+            tfsirplace.textContent = tafsir[2].text;
         });
         number.textContent = `Al-quran | surah number :${quran.chapter} | Ayah :${quran.verse}`;
         console.log(quran);
