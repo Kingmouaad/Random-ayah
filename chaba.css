@@ -3,20 +3,21 @@ body {
   padding: 0;
   box-sizing: border-box;
   width: 100%;
-  height: 100vh;
+  min-height: 100vh;
   background-image: url("pattern1.jpeg");
   font-family: "Amiri Quran", serif;
   background-repeat: repeat;
   background-attachment: fixed;
-  /* overflow: hidden; */
+  overflow-x: hidden;
 }
 .container {
   width: 100%;
-  height: 100%;
+  min-height: 100vh;
   display: flex;
   flex-direction: column;
-
   gap: 20px;
+  padding: 0;
+  box-sizing: border-box;
 }
 .head {
   display: flex;
@@ -199,29 +200,43 @@ body {
 
 /* Small Mobile Devices (320px - 480px) */
 @media (max-width: 480px) {
+  body {
+    padding-top: 20px;
+    padding-bottom: 20px;
+  }
+  
+  .container {
+    gap: 15px;
+    padding: 0 10px;
+  }
+  
   .head {
     flex-direction: column;
-    gap: 20px;
-    padding: 10px;
+    gap: 15px;
+    padding: 15px 10px;
+    min-height: auto;
   }
+  
   .bigtext {
     align-self: center;
+    font-size: 24px;
+    margin-bottom: 10px;
+    text-align: center;
+    line-height: 1.2;
   }
 
   #lang,
   #Generate {
-    min-width: 150px;
-    min-height: 45px;
-    font-size: 18px;
-  }
-
-  .bigtext {
-    font-size: 28px;
+    min-width: 140px;
+    min-height: 50px;
+    font-size: 16px;
+    margin: 5px 0;
   }
 
   .content {
     flex-direction: column;
-    gap: 10px;
+    gap: 15px;
+    padding: 0 10px;
   }
 
   #backward,
@@ -229,55 +244,85 @@ body {
     display: none;
   }
 
-  #backward div,
-  #forward div {
-    font-size: 28px;
-    min-height: 60px;
-  }
-
   #chest {
     order: 1;
-    padding: 10px;
+    padding: 15px 10px;
+    gap: 15px;
   }
 
   #AYAH,
   #ayahtranslate {
-    font-size: 20px;
-    min-height: 60px;
+    font-size: 18px;
+    min-height: auto;
+    line-height: 1.6;
+    padding: 10px 0;
   }
 
   #tfsir {
-    font-size: 18px;
+    font-size: 16px;
     flex-direction: column;
-    gap: 5px;
+    gap: 8px;
+    width: 100%;
+  }
+
+  .quran-btn {
+    padding: 12px 20px;
+    font-size: 14px;
+    width: 100%;
+    margin: 3px 0;
+  }
+
+  #tfsirplace {
+    font-size: 16px;
+    line-height: 1.5;
+    padding: 10px;
+    margin: 10px 0;
   }
 
   #number {
-    font-size: 24px;
+    font-size: 18px;
+    text-align: center;
+    margin-top: 10px;
   }
 }
 
 /* Mobile Devices (481px - 768px) */
 @media (min-width: 481px) and (max-width: 768px) {
-  .head {
-    flex-direction: row;
+  body {
+    padding-top: 15px;
+    padding-bottom: 15px;
+  }
+  
+  .container {
     gap: 15px;
+    padding: 0 15px;
+  }
+  
+  .head {
+    flex-direction: column;
+    gap: 15px;
+    padding: 15px;
+    min-height: auto;
+  }
+
+  .bigtext {
+    font-size: 28px;
+    text-align: center;
+    line-height: 1.3;
   }
 
   #lang,
   #Generate {
     min-width: 160px;
     min-height: 48px;
-    font-size: 20px;
-  }
-
-  .bigtext {
-    font-size: 30px;
+    font-size: 18px;
+    margin: 5px 0;
   }
 
   .content {
-    flex-direction: row;
+    flex-direction: column;
     gap: 15px;
+    padding: 0 15px;
   }
 
   #backward,
@@ -285,25 +330,45 @@ body {
     display: none;
   }
 
-  #backward div,
-  #forward div {
-    font-size: 32px;
-    min-height: 75px;
+  #chest {
+    padding: 15px;
+    gap: 15px;
   }
 
   #AYAH,
   #ayahtranslate {
-    font-size: 22px;
-    min-height: 75px;
+    font-size: 20px;
+    min-height: auto;
+    line-height: 1.5;
+    padding: 10px 0;
   }
 
-  #tfsir,
+  #tfsir {
+    flex-direction: row;
+    gap: 10px;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  .quran-btn {
+    padding: 10px 16px;
+    font-size: 13px;
+    flex: 1;
+    min-width: 140px;
+    margin: 3px;
+  }
+
   #tfsirplace {
-    font-size: 20px;
+    font-size: 18px;
+    line-height: 1.4;
+    padding: 10px;
+    margin: 10px 0;
   }
 
   #number {
-    font-size: 26px;
+    font-size: 22px;
+    text-align: center;
+    margin-top: 10px;
   }
 }
 
@@ -394,52 +459,92 @@ body {
 
 /* Landscape Orientation for Mobile */
 @media (max-width: 768px) and (orientation: landscape) {
+  body {
+    padding-top: 10px;
+    padding-bottom: 10px;
+  }
+  
+  .container {
+    gap: 10px;
+    padding: 0 10px;
+  }
+  
   .head {
     flex-direction: row;
     min-height: 60px;
     gap: 15px;
+    padding: 10px;
+  }
+
+  .bigtext {
+    font-size: 20px;
+    flex: 1;
+    text-align: center;
   }
 
   #lang,
   #Generate {
-    min-width: 140px;
+    min-width: 120px;
     min-height: 40px;
-    font-size: 18px;
-  }
-
-  .bigtext {
-    font-size: 24px;
+    font-size: 16px;
   }
 
   .content {
     flex-direction: row;
     gap: 15px;
+    padding: 0 10px;
   }
 
   #backward,
   #forward {
-    width: 20%;
+    width: 15%;
+    display: flex;
   }
 
   #backward div,
   #forward div {
-    font-size: 28px;
-    min-height: 60px;
+    font-size: 24px;
+    min-height: 50px;
+  }
+
+  #chest {
+    flex: 1;
+    padding: 10px;
+    gap: 10px;
   }
 
   #AYAH,
   #ayahtranslate {
-    font-size: 20px;
-    min-height: 60px;
+    font-size: 18px;
+    min-height: auto;
+    line-height: 1.4;
+    padding: 5px 0;
   }
 
-  #tfsir,
+  #tfsir {
+    flex-direction: row;
+    gap: 8px;
+    flex-wrap: wrap;
+  }
+
+  .quran-btn {
+    padding: 8px 12px;
+    font-size: 12px;
+    flex: 1;
+    min-width: 100px;
+  }
+
   #tfsirplace {
-    font-size: 18px;
+    font-size: 16px;
+    line-height: 1.3;
+    padding: 8px;
+    margin: 8px 0;
   }
 
   #number {
-    font-size: 22px;
+    font-size: 18px;
+    text-align: center;
+    margin-top: 8px;
   }
 }
 
