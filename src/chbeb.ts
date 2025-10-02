@@ -43,7 +43,24 @@ async function aynsfunction() {
     tafasir.push(tafsirresponse);
   }
 
-  return [quranresponse, tafasir, englishresponse, frenshresponse];
+  // Derive surah name from info.json for display
+  const surahInfo = info.chapters[numbersurah - 1] || {};
+  const surahName =
+    (surahInfo as any).name ??
+    (surahInfo as any).englishname ??
+    (surahInfo as any).englishName ??
+    (surahInfo as any).name_arabic ??
+    (surahInfo as any).arabic ??
+    (surahInfo as any).name_simple ??
+    "";
+
+  return [
+    quranresponse,
+    tafasir,
+    englishresponse,
+    frenshresponse,
+    { surahName, numbersurah, numberayah },
+  ];
 }
 
 const ayah = document.querySelector("#AYAH") as HTMLElement | null;
@@ -84,7 +101,7 @@ const forward = document.querySelector("#forward") as HTMLElement | null;
 async function handleGenerateClick() {
   try {
     showLoader();
-    const [quran, tafsir, en, fr] = await aynsfunction();
+    const [quran, tafsir, en, fr, meta] = await aynsfunction();
     if (ayah) ayah.textContent = quran.text ?? "";
 
     // Simple language switch for translation display
@@ -128,7 +145,9 @@ async function handleGenerateClick() {
       tfsirplace!.textContent = "";
       tfsirplace!.textContent = tafsir[2].text;
     });
-    number!.textContent = `Al-quran | surah number :${quran.chapter} | Ayah :${quran.verse}`;
+    number!.textContent = `${meta?.surahName || "Al-quran"} | surah number :${
+      quran.chapter
+    } | Ayah :${quran.verse}`;
     console.log(quran);
     console.log(tafsir);
     console.log(en);
